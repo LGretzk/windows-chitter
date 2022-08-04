@@ -17,14 +17,17 @@ function Peeps() {
   }, [peeps, dispatch]);
 
   return (
-    <div>
-      <h1>This is the peeps page</h1>
-      <div>
-        <PeepForm/>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto">
+          <PeepForm/>
+        </div>
       </div>
-      <div>
-        {peeps.map(peep => <PeepCard data={peep} key={peep.id}/>)}
-      </div>
+      <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto">
+          {peeps.map(peep => <PeepCard data={peep} key={peep.id}/>)}
+        </div>
+      </div>        
     </div>
   );
 }
