@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div className="App">
+    <h1>Header</h1>
       <Header />
       <Routes>
         <Route path="/" element={<Home/>} />
