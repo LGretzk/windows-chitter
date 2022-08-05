@@ -1,7 +1,8 @@
 # Chitter
 
 This is an independent project based on the Makers Chitter challenge. Chitter is a lightweight clone of Twitter that allows users to post messages to a public stream.  
-I decided to build a front-end-single-page-app to interface with the existing Chitter API to practice React, Redux, Bootstrap and async Javascript. 
+
+I decided to build a front-end-single-page-app to interface with the existing Chitter API to practice React, Redux, Bootstrap (responsive design) and async Javascript. 
 
 ## Demo
 
