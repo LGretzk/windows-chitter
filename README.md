@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# Chitter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Intro to the project
+
+## Project Description
+
+- independent project
+- aim to practice React, Redux, using external APIs, Async Javascript, CSS, Bootstrap
+
+## Demo
+-------
+### Main page
+![main](public/images/main_page.JPG)
+
+### Login page
+![login](public/images/login.JPG)
+
+### Registration page
+![registration](public/images/registration.JPG)
+
+### Responsive design
+
+|  |  |
+|------------|-------------|
+|![r-main](public/images/smartphone_main_page.png) | ![r-login](public/images/smartphone_login.png) |
+
+
 
 ## Available Scripts
 
