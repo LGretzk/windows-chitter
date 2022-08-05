@@ -1,14 +1,7 @@
 # Chitter
 
-Intro to the project
-
-## Project Description
-
-- independent project
-- aim to practice React, Redux, using external APIs, Async Javascript, CSS, Bootstrap
-
-Twitter clone that allows users post messages to a public stream.
-Build a front-end-single-page-app to interface with the API.
+This is an independent project based on the Makers Chitter challenge. Chitter is a lightweight clone of Twitter that allows users to post messages to a public stream.  
+I decided to build a front-end-single-page-app to interface with the existing Chitter API to practice React, Redux, Bootstrap and async Javascript. 
 
 ## Demo
 
@@ -42,8 +35,22 @@ Build a front-end-single-page-app to interface with the API.
 
 ## How to run locally
 
-
 ### Install Node.js
+1. Install `nvs` version manager
+```
+choco install nvs
+```
+2. Add the latest version of node
+```
+nvs add latest
+```
+3. Add a version of node to your `PATH` for the current shell
+```
+$ nvs use lts
+PATH -= %LOCALAPPDATA%\nvs\default
+PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
+$nvs link lts
+```
 
 ### Set up the project
 1. Fork this repository
