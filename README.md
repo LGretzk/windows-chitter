@@ -7,6 +7,9 @@ Intro to the project
 - independent project
 - aim to practice React, Redux, using external APIs, Async Javascript, CSS, Bootstrap
 
+Twitter clone that allows users post messages to a public stream.
+Build a front-end-single-page-app to interface with the API.
+
 ## Demo
 -------
 ### Main page
@@ -25,70 +28,119 @@ Intro to the project
 |![r-main](public/images/smartphone_main_page.png) | ![r-login](public/images/smartphone_login.png) |
 
 
+## Technologies Used
+---------
 
-## Available Scripts
+- React
+- Redux
+- Javascript
+- HTML
+- CSS
+- Bootstrap
+- External API
+- Postman
 
-In the project directory, you can run:
 
-### `npm start`
+## How to run locally
+---------
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Install Node.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Set up the project
+1. Fork this repository
+2. Clone the fork to your local machine
+```
+git clone https://github.com/LGretzk/windows-chitter.git
+```
+3. Install Node.js dependencies
+```
+npm install
+```
 
-### `npm test`
+### Start
+1. Start the server
+```
+npm start
+```
+2. Browse to [http://localhost:3000](http://localhost:3000)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User stories
+-----
 
-### `npm run build`
+```
+As a User
+So that I can let people know what I am doing  
+I want to post a message (peep) to chitter
+```
+```
+As a User
+So that I can see what others are saying  
+I want to see all peeps in reverse chronological order
+```
+```
+As a User
+So that I can better appreciate the context of a peep
+I want to see the time at which it was made
+```
+```
+As a User
+So that I can post messages on Chitter as me
+I want to sign up for Chitter
+```
+```
+As a Maker
+So that only I can post messages on Chitter as me
+I want to log in to Chitter
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## API documentation
+-----
+Each endpoint is illustrated as a curl command.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Users
+POST/users  
+Creates a new user.
+```
+curl "https://chitter-backend-api-v2.herokuapp.com/users" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"user": {"handle":"kay", "password":"mypassword"}}'
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Sessions
+POST/sessions  
+Creates a new session, giving you a user_id and session_key required to perform actions on behalf of the user (e.g. posting peeps, liking peeps).
 
-### `npm run eject`
+Creating a new session renders any previous session_keys invalid.
+```
+curl "https://chitter-backend-api-v2.herokuapp.com/sessions" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"session": {"handle":"kay", "password":"mypassword"}}'
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Peeps
+GET /peeps  
+Returns a list of the last 50 peeps in reverse chronological order.
+```
+curl "https://chitter-backend-api-v2.herokuapp.com/peeps"
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+POST/peeps
+Creates a new Peep.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This endpoint requires a user_id and session_key given as a token in the authorization header.
+```
+curl "https://chitter-backend-api-v2.herokuapp.com/peeps" \
+  -X POST \
+  -H "Authorization: Token token=a_valid_session_key" \
+  -H "Content-Type: application/json" \
+  -d '{"peep": {"user_id":1, "body":"my first peep :)"}}'
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
+## React documentation
+-----
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
