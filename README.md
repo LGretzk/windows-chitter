@@ -11,7 +11,7 @@ Twitter clone that allows users post messages to a public stream.
 Build a front-end-single-page-app to interface with the API.
 
 ## Demo
--------
+
 ### Main page
 ![main](public/images/main_page.JPG)
 
@@ -29,7 +29,6 @@ Build a front-end-single-page-app to interface with the API.
 
 
 ## Technologies Used
----------
 
 - React
 - Redux
@@ -42,7 +41,7 @@ Build a front-end-single-page-app to interface with the API.
 
 
 ## How to run locally
----------
+
 
 ### Install Node.js
 
@@ -65,7 +64,7 @@ npm start
 2. Browse to [http://localhost:3000](http://localhost:3000)
 
 ## User stories
------
+
 
 ```
 As a User
@@ -88,13 +87,13 @@ So that I can post messages on Chitter as me
 I want to sign up for Chitter
 ```
 ```
-As a Maker
+As a User
 So that only I can post messages on Chitter as me
 I want to log in to Chitter
 ```
 
 ## API documentation
------
+
 Each endpoint is illustrated as a curl command.
 
 ### Users
@@ -140,7 +139,7 @@ curl "https://chitter-backend-api-v2.herokuapp.com/peeps" \
 
 
 ## React documentation
------
+
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
